@@ -1,0 +1,39 @@
+import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MyserviceService } from '../service/myservice.service';
+import { Router, ActivatedRoute } from '@angular/router';
+@Component({
+  selector: 'app-signin',
+  templateUrl: './signin.component.html',
+  styleUrls: ['./signin.component.css']
+})
+export class SigninComponent implements OnInit {
+  loginForm: FormGroup;
+  constructor(private _myservice: MyserviceService,
+    private _router: Router,
+    private _activatedRoute: ActivatedRoute) {
+    this.loginForm = new FormGroup({
+      email: new FormControl(null, Validators.required),
+      password: new FormControl(null, Validators.required)
+    });
+    
+  }
+
+  ngOnInit(): void {
+  }
+  login() {
+    console.log(this.loginForm.value);
+
+    if (this.loginForm.valid) {
+      this._myservice.login(this.loginForm.value)
+        .subscribe(
+          data => {
+            console.log(data);
+            localStorage.setItem('token', data.toString());
+            this._router.navigate(['/dash']);
+          },
+          error => { }
+        );
+    }
+  }
+}
