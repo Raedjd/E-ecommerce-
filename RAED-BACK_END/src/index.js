@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
    else {
      next();
    }});
-    
+     
 mongoose.connect(
 `mongodb+srv://raed:raedjaidi@cluster0.aqqi5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
     {
