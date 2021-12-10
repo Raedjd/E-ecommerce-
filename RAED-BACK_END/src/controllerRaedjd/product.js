@@ -101,4 +101,4 @@ exports.getProducts = async (req, res) => {
       if (!err) res.send(docs);
       else console.log("Delete error : " + err);
     })
-};
+}; 
