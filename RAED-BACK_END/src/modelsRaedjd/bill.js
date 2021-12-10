@@ -15,7 +15,7 @@ const billSchema = new mongoose.Schema(
     totalAmount: {
       type: Number,
       required: true,
-    },
+    },  
     items: [
       {
         productId: {
