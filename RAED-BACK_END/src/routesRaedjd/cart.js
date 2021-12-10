@@ -11,4 +11,4 @@ router.post("/user/cart/addtocart",requireSignin,userMiddleware,addItemToCart);
 router.get("/user/cart/gettocart",requireSignin,userMiddleware, getCartItems);
 router.delete("/user/cart/deletetocart/:id",requireSignin,userMiddleware, removeCartItems);
 
-module.exports = router;
+module.exports = router; 
