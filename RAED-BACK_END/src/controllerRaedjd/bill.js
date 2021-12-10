@@ -50,6 +50,6 @@ exports.getOrders = (req, res) => {
         res.status(200).json({ orders });
       }
     });
-};
+}; 
 
 //////////////////////////////////////RAED JAIDI//////////////////////////////// 
