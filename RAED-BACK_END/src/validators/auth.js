@@ -16,7 +16,7 @@ exports.validateSignupRequest = [
     .withMessage('Password must be at least 6 character long')
 ];
 //////////////////////////////////////RAED JAIDI////////////////////////////////
-
+ 
 exports.validateSigninRequest = [
     check('email')
     .isEmail()
