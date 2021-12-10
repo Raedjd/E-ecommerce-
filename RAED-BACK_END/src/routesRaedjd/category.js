@@ -29,4 +29,4 @@ router.get('/category/getcategory',getCategories);
 router.put("/category/update/:id",requireSignin ,adminMiddleware,upload.array("categoryImage"),updateCategories);
 router.delete("/category/delete/:id",requireSignin ,adminMiddleware,deleteCategories);
 
-module.exports = router;
+module.exports = router; 
